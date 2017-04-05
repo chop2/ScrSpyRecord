@@ -115,7 +115,8 @@
     <ClInclude Include="CRectTrackerInheritance.h" />
     <ClInclude Include="CSCSpy.h" />
     <ClInclude Include="CvvImage.h" />
-    <ClInclude Include="ffmpeg_screen_record.h" />
+    <ClInclude Include="ffmpeg_screen_record\ffmpeg_screen_record.h" />
+    <ClInclude Include="keyboardController\keyboardCotroller.h" />
     <ClInclude Include="PngImage.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ScreenSpy.h" />
@@ -127,7 +128,8 @@
     <ClCompile Include="CControlDlg.cpp" />
     <ClCompile Include="CRectTrackerInheritance.cpp" />
     <ClCompile Include="CvvImage.cpp" />
-    <ClCompile Include="ffmpeg_screen_record.cpp" />
+    <ClCompile Include="ffmpeg_screen_record\ffmpeg_screen_record.cpp" />
+    <ClCompile Include="keyboardController\keyboardCotroller.cpp" />
     <ClCompile Include="PngImage.cpp" />
     <ClCompile Include="ScreenSpy.cpp" />
     <ClCompile Include="ScreenSpyDlg.cpp" />

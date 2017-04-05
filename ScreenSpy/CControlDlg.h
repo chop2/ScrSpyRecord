@@ -1,5 +1,5 @@
 #pragma once
-#include "ffmpeg_screen_record.h"
+#include "./ffmpeg_screen_record/ffmpeg_screen_record.h"
 // CCControlDlg ¶Ô»°¿ò
 
 class CCControlDlg : public CDialogEx
