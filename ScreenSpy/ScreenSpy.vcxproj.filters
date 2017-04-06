@@ -1,3 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="CControlDlg.cpp" />
+    <ClCompile Include="CRectTrackerInheritance.cpp" />
+    <ClCompile Include="CvvImage.cpp" />
+    <ClCompile Include="PngImage.cpp" />
+    <ClCompile Include="ScreenSpy.cpp" />
+    <ClCompile Include="ScreenSpyDlg.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="ffmpeg_screen_record\ffmpeg_screen_record.cpp">
+      <Filter>ffmpeg_record</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboardController\keyboardCotroller.cpp">
+      <Filter>keyboard_controller</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CControlDlg.h" />
+    <ClInclude Include="CRectTrackerInheritance.h" />
+    <ClInclude Include="CSCSpy.h" />
+    <ClInclude Include="CvvImage.h" />
+    <ClInclude Include="PngImage.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ScreenSpy.h" />
+    <ClInclude Include="ScreenSpyDlg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ffmpeg_screen_record\ffmpeg_screen_record.h">
+      <Filter>ffmpeg_record</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboardController\keyboardCotroller.h">
+      <Filter>keyboard_controller</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ScreenSpy.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\ARROW_COLOR.cur" />
+    <None Include="res\ScreenSpy.ico" />
+    <None Include="res\ScreenSpy.rc2" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\toolbar2.bmp" />
+    <None Include="SC_ACTION.png" />
+    <None Include="SC_DOT.png" />
+    <None Include="SC_MASK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ffmpeg_record">
+      <UniqueIdentifier>{34175928-2ce2-48c6-8846-86fc34e5fb7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="keyboard_controller">
+      <UniqueIdentifier>{68012a13-8650-49bf-9ff0-6dd77692cdd0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>

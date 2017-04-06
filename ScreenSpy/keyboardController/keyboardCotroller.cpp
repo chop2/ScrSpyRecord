@@ -1,5 +1,4 @@
 #include "keyboardCotroller.h"
-#include <Windows.h>
 #include <WinUser.h>
 #include <atlconv.h>
 
@@ -33,6 +32,7 @@ KeyboardController& KeyboardController::operator = (const KeyboardController& co
 
 KeyboardController* KeyboardController::GetInstance()
 {
+	::InitializeCriticalSection(&cs);
 	if (m_pInstance == NULL)
 	{
 		::EnterCriticalSection(&cs);
@@ -45,12 +45,32 @@ KeyboardController* KeyboardController::GetInstance()
 
 void KeyboardController::SendKey(const string& key, bool shift)
 {
-	sendKeys((char*)key.c_str());
+	wstring wstr;
+	USES_CONVERSION;
+	wstr = A2W(key.c_str());
+	sendAscii(wstr[0], shift);
 }
 
 void KeyboardController::SendKeys(const vector<string>& keys)
 {
+	for (size_t i = 0; i < keys.size(); i++)
+	{
+		SendKey(keys[i], false);
+	}
+}
 
+void KeyboardController::SendStr(const string& key)
+{
+	sendKeys((char*)key.c_str());
+}
+
+void KeyboardController::SendKey(HWND hWnd, char key)
+{
+	keybd_event(VK_CONTROL, 0, 0, 0);
+	PostMessage(hWnd, WM_KEYDOWN, key, 0);
+	PostMessage(hWnd, WM_KEYUP, key, 0);
+	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+	CloseHandle(hWnd);
 }
 
 void KeyboardController::LeftClick()
@@ -69,7 +89,7 @@ void KeyboardController::LeftClick()
 
 void KeyboardController::RightClick()
 {
-	INPUT    Input = { 0 };
+	INPUT Input = { 0 };
 	// ÓÒ¼ü°´ÏÂ
 	Input.type = INPUT_MOUSE;
 	Input.mi.dwFlags = MOUSEEVENTF_RIGHTDOWN;
